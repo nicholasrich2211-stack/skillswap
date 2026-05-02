@@ -1,14 +1,4 @@
-const suggestionList = [
-  "Guitar",
-  "Guitar Lessons",
-  "Guitar Chords",
-  "Basketball",
-  "Coding",
-  "Python",
-  "Public Speaking",
-  "Cooking",
-  "Photography"
-]
+
 let skills = JSON.parse(localStorage.getItem("skills")) || [];
 
 function save() {
@@ -57,13 +47,3 @@ function showSuggestions() {
     s.toLowerCase().includes(input)
   );
 
-  filtered.forEach(s => {
-    const div = document.createElement("div");
-    div.textContent = s;
-    div.onclick = () => {
-      document.getElementById("skillInput").value = s;
-      box.innerHTML = "";
-    };
-    box.appendChild(div);
-  });
-}
