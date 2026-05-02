@@ -2,28 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkillSwap</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>SkillSwap 🔥</h1>
-  <p>Learn. Teach. Connect.</p>
-</header>
+<h1>SkillSwap 🔥</h1>
 
-<main>
-  <section class="box">
-    <h2>Add a Skill</h2>
-    <input id="skillInput" placeholder="e.g. Basketball, Guitar">
-    <button onclick="addSkill()">Add</button>
-  </section>
+<div class="box">
+  <h2>Add a Skill</h2>
+  <input id="skillInput" placeholder="e.g. Guitar">
+  <button onclick="addSkill()">Add</button>
+</div>
 
-  <section class="box">
-    <h2>Search Skills</h2>
-    <input id="searchInput" placeholder="Search...">
-    <button onclick="searchSkill()">Search</button>
-  </section>
+<div class="box">
+  <h2>Your Skills</h2>
+  <div id="skillsList"></div>
+</div>
 
+<script src="script.js"></script>
 
+</body>
+</html>
