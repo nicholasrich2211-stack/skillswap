@@ -45,3 +45,25 @@ function display(arr) {
 }
 
 display(skills);
+function showSuggestions() {
+  const input = document.getElementById("skillInput").value.toLowerCase();
+  const box = document.getElementById("suggestions");
+
+  box.innerHTML = "";
+
+  if (!input) return;
+
+  const filtered = suggestionList.filter(s =>
+    s.toLowerCase().includes(input)
+  );
+
+  filtered.forEach(s => {
+    const div = document.createElement("div");
+    div.textContent = s;
+    div.onclick = () => {
+      document.getElementById("skillInput").value = s;
+      box.innerHTML = "";
+    };
+    box.appendChild(div);
+  });
+}
