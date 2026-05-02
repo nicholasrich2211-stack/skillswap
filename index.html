@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillSwap</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<header>
     <h1>SkillSwap 🔥</h1>
-    <p>Your site is working!</p>
+    <p>Learn. Teach. Connect.</p>
+</header>
+
+<section class="container">
+    <h2>🔍 Find a Skill</h2>
+    <input type="text" id="search" placeholder="Search skills...">
+    <button onclick="searchSkill()">Search</button>
+</section>
+
+<section class="container">
+    <h2>➕ Offer a Skill</h2>
+    <input type="text" id="skillInput" placeholder="Enter your skill">
+    <button onclick="addSkill()">Add Skill</button>
+</section>
+
+<section class="container">
+    <h2>📋 Available Skills</h2>
+    <div id="results"></div>
+</section>
+
+<footer>
+    <p>© 2026 SkillSwap</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
