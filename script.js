@@ -1,49 +1,24 @@
-
-let skills = JSON.parse(localStorage.getItem("skills")) || [];
-
-function save() {
-  localStorage.setItem("skills", JSON.stringify(skills));
-}
+let skills = [];
 
 function addSkill() {
   const input = document.getElementById("skillInput");
-  const value = input.value.trim();
+  const skill = input.value.trim();
 
-  if (!value) return;
+  if (skill === "") return;
 
-  skills.push(value);
-  save();
+  skills.push(skill);
   input.value = "";
-  display(skills);
+
+  displaySkills();
 }
 
-function searchSkill() {
-  const query = document.getElementById("searchInput").value.toLowerCase();
-  const filtered = skills.filter(s => s.toLowerCase().includes(query));
-  display(filtered);
-}
-
-function display(arr) {
-  const list = document.getElementById("list");
+function displaySkills() {
+  const list = document.getElementById("skillsList");
   list.innerHTML = "";
 
-  arr.forEach(s => {
+  skills.forEach(skill => {
     const div = document.createElement("div");
-    div.textContent = s;
+    div.textContent = skill;
     list.appendChild(div);
   });
 }
-
-display(skills);
-function showSuggestions() {
-  const input = document.getElementById("skillInput").value.toLowerCase();
-  const box = document.getElementById("suggestions");
-
-  box.innerHTML = "";
-
-  if (!input) return;
-
-  const filtered = suggestionList.filter(s =>
-    s.toLowerCase().includes(input)
-  );
-
