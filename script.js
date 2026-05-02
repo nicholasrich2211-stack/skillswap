@@ -24,6 +24,3 @@ function renderSkills() {
     list.appendChild(item);
   });
 }
-
-// load on start
-renderSkills();
