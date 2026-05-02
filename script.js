@@ -1,24 +1,29 @@
-let skills = [];
+let skills = JSON.parse(localStorage.getItem("skills")) || [];
 
 function addSkill() {
   const input = document.getElementById("skillInput");
-  const skill = input.value.trim();
+  const value = input.value.trim();
 
-  if (skill === "") return;
+  if (!value) return;
 
-  skills.push(skill);
+  skills.push(value);
+  localStorage.setItem("skills", JSON.stringify(skills));
+
   input.value = "";
-
-  displaySkills();
+  renderSkills();
 }
 
-function displaySkills() {
+function renderSkills() {
   const list = document.getElementById("skillsList");
   list.innerHTML = "";
 
-  skills.forEach(skill => {
-    const div = document.createElement("div");
-    div.textContent = skill;
-    list.appendChild(div);
+  skills.forEach((skill, index) => {
+    const item = document.createElement("div");
+    item.textContent = skill;
+
+    list.appendChild(item);
   });
 }
+
+// load on start
+renderSkills();
